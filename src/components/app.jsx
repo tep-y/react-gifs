@@ -13,6 +13,7 @@ class App extends Component {
       gif: [],
       selected: "IwAZ6dvvvaTtdI8SD5"
     };
+    this.mainGif = this.mainGif.bind(this);
   }
 
   search = (query) => {
@@ -27,6 +28,13 @@ class App extends Component {
     });
   }
 
+  mainGif(something){
+    this.setState({
+      selected: something
+    });
+  }
+  
+
   render() {
 
     return (
@@ -39,7 +47,7 @@ class App extends Component {
         </div>
         <div className="right-scene">
           <div className="gif-list">
-            <GifList gifArray={this.state.gif}/>
+            <GifList gifArray={this.state.gif} mainGif={this.mainGif} />
           </div>
         </div>
       </div>
