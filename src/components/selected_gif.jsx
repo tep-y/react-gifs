@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 class SelectedGif extends Component {
   handleSelection = () => {
-    if (this.props.mainGif) {
-      this.props.mainGif(this.props.id);
-    }
+    this.props.mainGif(this.props.id);
   }
 
   render() {

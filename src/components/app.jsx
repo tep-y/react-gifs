@@ -11,7 +11,7 @@ class App extends Component {
 
     this.state = {
       gif: [],
-      selected: "IwAZ6dvvvaTtdI8SD5"
+      selected: null
     };
     this.mainGif = this.mainGif.bind(this);
   }
@@ -28,9 +28,9 @@ class App extends Component {
     });
   }
 
-  mainGif(something){
-    this.setState({
-      selected: something
+  mainGif = (id) => {
+  this.setState({
+      selected: id
     });
   }
   
@@ -42,7 +42,7 @@ class App extends Component {
         <div className="left-scene">
           <SearchBar searchUpdate={this.search} />
             <div className="selected-gif">
-              <SelectedGif id={this.state.selected}/>
+              {this.state.selected ? <SelectedGif id={this.state.selected}/> : " " }
             </div>
         </div>
         <div className="right-scene">
